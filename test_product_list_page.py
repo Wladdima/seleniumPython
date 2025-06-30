@@ -1,4 +1,5 @@
 import pytest
+import allure
 
 from pages.productDetailPage import ProductDetailPage
 from pages.productListPage import ProductListPage
@@ -16,13 +17,18 @@ def product_list_page(browser, case):
 
     return product_list_page
 
-
+@allure.story("Product")
+@allure.feature("Product list")
+@allure.title("Guest can see correct product list")
 def test_guest_user_can_see_correct_product_on_product_list_page(product_list_page, case):
     product_list_page.open()
     product = case['product']
     product_list_page.should_be_correct_product_on_page(product)
 
 
+@allure.story("Product")
+@allure.feature("Product list")
+@allure.title("Guest can go to product detail page")
 def test_guest_user_can_go_to_product_detail_page(browser, product_list_page, case):
     product = case['product']
     product_list_page.open()

@@ -1,4 +1,5 @@
 import pytest
+import allure
 
 from pages.cartPage import CartPage
 from pages.productDetailPage import ProductDetailPage
@@ -10,7 +11,9 @@ from utils.urls import CART_PAGE_URL
 def case(request):
     return request.param
 
-
+@allure.story("Cart")
+@allure.feature("Cart Page")
+@allure.title("Correct product info on cart page")
 def test_correct_product_info_is_displayed_on_cart_page(browser, case):
     product = case['product']
     product_detail_page = ProductDetailPage(browser, product.url)

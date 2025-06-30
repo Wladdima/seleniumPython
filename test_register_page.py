@@ -1,6 +1,10 @@
+import allure
 from models.users import generate_user
 
 
+@allure.story("Product")
+@allure.feature("Product list")
+@allure.title("New user can register")
 def test_new_user_can_register(register_page):
     new_user = generate_user()
 

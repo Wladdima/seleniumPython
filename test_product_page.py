@@ -1,4 +1,5 @@
 import pytest
+import allure
 
 from pages.productDetailPage import ProductDetailPage
 from utils.test_data import ProductDetailPageTestData
@@ -16,6 +17,9 @@ def product_detail_page(browser, case):
     return product_detail_page
 
 
+@allure.story("Product")
+@allure.feature("Product list")
+@allure.title("Guest can add product to cart")
 def test_guest_user_can_add_product_to_cart(product_detail_page, case):
     product = case['product']
     product_detail_page.open()
