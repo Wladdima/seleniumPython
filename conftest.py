@@ -25,6 +25,8 @@ def browser(request):
         opts = Options()
         opts.add_argument("--window-size=1920,1080")
         opts.add_argument("--headless=new")
+        opts.add_argument("--no-sandbox")
+        opts.add_argument("--disable-dev-shm-usage")
         browser = webdriver.Chrome(options=opts)
     elif browser_name == 'firefox':
         browser = webdriver.Firefox()
