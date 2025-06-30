@@ -9,6 +9,7 @@ class User:
     lastname: str
     password: str
 
+
 LOGIN_USER = User(
     email = 'qwe@qwe543.com',
     firstname = 'John',
@@ -16,8 +17,9 @@ LOGIN_USER = User(
     password = 'qwe123'
 )
 
+
 def generate_user():
-    return User (
+    return User(
         email = f'user{int(time.time())}@example.com',
         firstname = 'John',
         lastname = 'Doe',

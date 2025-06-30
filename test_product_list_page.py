@@ -9,16 +9,19 @@ from utils.test_data import ProductListPageTestData
 def case(request):
     return request.param
 
+
 @pytest.fixture(scope='function')
 def product_list_page(browser, case):
     product_list_page = ProductListPage(browser, case['prod_list_url'])
 
     return product_list_page
 
+
 def test_guest_user_can_see_correct_product_on_product_list_page(product_list_page, case):
     product_list_page.open()
     product = case['product']
     product_list_page.should_be_correct_product_on_page(product)
+
 
 def test_guest_user_can_go_to_product_detail_page(browser, product_list_page, case):
     product = case['product']

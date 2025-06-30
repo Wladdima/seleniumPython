@@ -3,15 +3,18 @@ import pytest
 from pages.productDetailPage import ProductDetailPage
 from utils.test_data import ProductDetailPageTestData
 
+
 @pytest.fixture(scope='function', params=ProductDetailPageTestData.CASES, ids=lambda c: f'prod_id={c["product"].id}')
 def case(request):
     return request.param
+
 
 @pytest.fixture(scope='function')
 def product_detail_page(browser, case):
     product_detail_page = ProductDetailPage(browser, case['product'].url)
 
     return product_detail_page
+
 
 def test_guest_user_can_add_product_to_cart(product_detail_page, case):
     product = case['product']

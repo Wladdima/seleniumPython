@@ -16,6 +16,7 @@ def pytest_addoption(parser):
         help='Choose browser: chrome or firefox'
     )
 
+
 @pytest.fixture(scope='function')
 def browser(request):
     browser_name = request.config.getoption('browser_name')
@@ -33,17 +34,20 @@ def browser(request):
 
     browser.quit()
 
+
 @pytest.fixture(scope='function')
 def main_page(browser):
     main_page = MainPage(browser, MAIN_PAGE_URL)
 
     return main_page
 
+
 @pytest.fixture(scope='function')
 def login_page(browser):
     login_page = LoginPage(browser, LOGIN_URL)
 
     return login_page
+
 
 @pytest.fixture(scope='function')
 def register_page(browser):

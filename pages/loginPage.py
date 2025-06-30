@@ -13,7 +13,6 @@ LOGIN_PASSWORD_FIELD = (By.CSS_SELECTOR, '#Password')
 LOGIN_SUBMIT_BTN = (By.CSS_SELECTOR, '.login-button')
 
 
-
 class LoginPage(MainPage):
     def should_be_login_page(self):
         self.should_be_login_url()

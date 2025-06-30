@@ -12,11 +12,15 @@ CART_PRODUCT_ATTRS = (By.CSS_SELECTOR, '.cart-item-row .attributes')
 CART_PRODUCT_TITLE = (By.CSS_SELECTOR, '.product-name')
 CART_PRODUCT_PRICE = (By.CSS_SELECTOR, '.product-unit-price')
 CART_PRODUCT_QUANTITY = (By.CSS_SELECTOR, '.qty-input')
-CART_SUB_TOTAL_PRICE = (By.XPATH, ("//td[@class='cart-total-left'] "
-                                        "[span/text()='Sub-Total:'] "
-                                        "/following-sibling::td[@class='cart-total-right'] "
-                                        "//span[@class='product-price']"))
-
+CART_SUB_TOTAL_PRICE = (
+    By.XPATH,
+    (
+        "//td[@class='cart-total-left']"
+        "[span/text()='Sub-Total:']"
+        "/following-sibling::td[@class='cart-total-right']"
+        "//span[@class='product-price']"
+    ),
+)
 
 
 class CartPage(BasePage):
@@ -35,7 +39,6 @@ class CartPage(BasePage):
         self.should_be_correct_product_price(product.price)
         self.should_be_correct_product_color(product.color)
         self.should_be_correct_product_quantity(product.quantity)
-
 
     def should_be_correct_product_title(self, exp_product_title):
         act_product_title = self.product_row.find_element(*CART_PRODUCT_TITLE).text.strip()

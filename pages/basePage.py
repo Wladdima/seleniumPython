@@ -26,7 +26,7 @@ class BasePage:
         element = self.wait_until_element_is_visible(self.browser, locator)
         ActionChains(self.browser).move_to_element(element).perform()
 
-    def go_to_page_via_top_menu(self, target_page_locator:tuple, parent_locator:tuple = None):
+    def go_to_page_via_top_menu(self, target_page_locator: tuple, parent_locator: tuple = None):
         if parent_locator:
             self.move_cursor_to_element(parent_locator)
 
@@ -45,8 +45,11 @@ class BasePage:
 
     def should_be_correct_url(self, expected_url):
         actual_url = self.browser.current_url
-        assert expected_url == actual_url, Err.ELEMENTS_DO_NOT_MATCH_ERR_MSG.format(actual=actual_url, expected=expected_url,
-                                                                                    el_name=URL_ATTR_NAME)
+        assert expected_url == actual_url, Err.ELEMENTS_DO_NOT_MATCH_ERR_MSG.format(
+            actual=actual_url,
+            expected=expected_url,
+            el_name=URL_ATTR_NAME
+        )
 
     def set_dropdown_value(self, locator_type, locator, value_to_set):
         select = Select(self.browser.find_element(locator_type, locator))
@@ -74,4 +77,3 @@ class BasePage:
         except TimeoutException:
             return False
         return True
-

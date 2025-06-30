@@ -26,8 +26,10 @@ class RegisterPage(MainPage):
 
     def should_be_register_url(self):
         actual_url = self.browser.current_url
-        assert REGISTER_URL == actual_url, Err.ELEMENTS_DO_NOT_MATCH_ERR_MSG.format(actual=actual_url, expected=REGISTER_URL,
-                                                                                    el_name=URL_ATTR_NAME)
+        assert REGISTER_URL == actual_url, Err.ELEMENTS_DO_NOT_MATCH_ERR_MSG.format(
+            actual=actual_url, expected=REGISTER_URL,
+            el_name=URL_ATTR_NAME
+        )
 
     def should_be_register_form(self):
         assert self.is_element_present(*REGISTER_FORM), (

@@ -6,8 +6,15 @@ from utils.messages import ErrorMessages as Err
 
 
 PRODUCT_LIST_PAGE_TITLE = (By.CSS_SELECTOR, 'div.page-title h1')
-DYNAMIC_PRODUCT_ID_AND_TITLE_LOCATOR = (By.XPATH, '//div[@class="product-grid"]//div[@data-productid="{prod_id}"]//a[normalize-space(text())="{prod_title}"]')
-DYNAMIC_LINK_TO_PRODUCT_DETAIL_PAGE = (By.CSS_SELECTOR,  'div.product-grid  div[data-productid="{prod_id}"] h2.product-title a')
+DYNAMIC_PRODUCT_ID_AND_TITLE_LOCATOR = (
+    By.XPATH,
+    '//div[@class="product-grid"]//div[@data-productid="{prod_id}"]'
+    '//a[normalize-space(text())="{prod_title}"]',
+)
+DYNAMIC_LINK_TO_PRODUCT_DETAIL_PAGE = (
+    By.CSS_SELECTOR,
+    'div.product-grid  div[data-productid="{prod_id}"] h2.product-title a'
+)
 
 
 class ProductListPage(BasePage):

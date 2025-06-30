@@ -12,6 +12,7 @@ class ProductListPageTestData:
         )
     ]
 
+
 class ProductDetailPageTestData:
     CASES = [
         dict(
@@ -19,6 +20,7 @@ class ProductDetailPageTestData:
                                manufacturer=PHONE_COVER_PRODUCT_MANUFACTURER, price="10.00"),
         )
     ]
+
 
 class CartPageTestData:
     CASES = [

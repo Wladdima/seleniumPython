@@ -40,5 +40,7 @@ class TestProductListPageFromMainPage:
         main_page.open()
         main_page.go_to_cellphone_product_list_page()
         cellphone_product_list_page = ProductListPage(browser, browser.current_url)
-        cellphone_product_list_page.should_be_product_list_page(expected_url=CELLPHONE_PRODUCT_LIST_URL,
-                                                                expected_page_title=pL.CELLPHONE_PRODUCT_LIST_PAGE_TITLE)
+        cellphone_product_list_page.should_be_product_list_page(
+            expected_url=CELLPHONE_PRODUCT_LIST_URL,
+            expected_page_title=pL.CELLPHONE_PRODUCT_LIST_PAGE_TITLE
+        )
