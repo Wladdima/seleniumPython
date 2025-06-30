@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["bash", "-c", "pytest --alluredir=allure-results && allure generate allure-results --clean -o allure-report", "test_cart_page.py"]
+CMD ["bash", "-c", "pytest --alluredir=allure-results && allure generate allure-results --clean -o allure-report test_cart_page.py"]
