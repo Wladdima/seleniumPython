@@ -1,0 +1,7 @@
+DOMAIN = 'https://demowebshop.tricentis.com'
+MAIN_PAGE_URL = DOMAIN + '/'
+LOGIN_URL = DOMAIN + '/login'
+REGISTER_URL = DOMAIN + '/register'
+CELLPHONE_PRODUCT_LIST_URL = DOMAIN + '/cell-phones'
+PHONE_COVER_DETAIL_PAGE_URL = DOMAIN + '/phone-cover'
+CART_PAGE_URL = DOMAIN + '/cart'
